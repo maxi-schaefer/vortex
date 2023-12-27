@@ -1,6 +1,6 @@
-package dev.max.bankingsystem.utils;
+package dev.max.vortex.utils;
 
-import dev.max.bankingsystem.terminal.JLine3Terminal;
+import dev.max.vortex.terminal.JLine3Terminal;
 
 /**
  * @author gokimax at 12/20/2023
@@ -16,6 +16,8 @@ public class Common {
     terminal.write("&0\t\t\t  \\     (  <_> )  | \\/|  | \\  ___/ >    < ");
     terminal.write("&0\t\t\t   \\___/ \\____/|__|   |__|  \\___  >__/\\_ \\");
     terminal.write("&0                                \\/      \\/");
+    terminal.write("&5\t\t\tType &0'help' &5to get a list of available commands!");
+    terminal.write("");
     terminal.write("&6──────────═══──═══──═══──═══─────────┤× &5Developed by &0max &6×├─────────═══──═══──═══──═══──────────");
     terminal.write("");
     terminal.write("");

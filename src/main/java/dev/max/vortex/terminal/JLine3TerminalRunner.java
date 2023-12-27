@@ -1,6 +1,6 @@
-package dev.max.bankingsystem.terminal;
+package dev.max.vortex.terminal;
 
-import dev.max.bankingsystem.TemplateInstance;
+import dev.max.vortex.VortexInstance;
 
 /**
  * @author gokimax at 12/20/2023
@@ -22,8 +22,8 @@ public class JLine3TerminalRunner extends Thread {
     @Override
     public void run() {
         String line;
-        while((line = terminal.getLineReader().readLine(Color.translate("&4@&0template &6» &5"))) != null) {
-            TemplateInstance.getInstance().getCommandManager().call(line.split(" "));
+        while((line = terminal.getLineReader().readLine(Color.translate(VortexInstance.getInstance().getTerminalConfig().getPrompt() + " &5"))) != null) {
+            VortexInstance.getInstance().getCommandManager().call(line.split(" "));
         }
     }
 

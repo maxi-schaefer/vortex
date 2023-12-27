@@ -1,11 +1,12 @@
-package dev.max.bankingsystem.commands;
+package dev.max.vortex.commands;
 
-import dev.max.bankingsystem.commands.impl.ClearCommand;
-import dev.max.bankingsystem.commands.impl.HelpCommand;
-import dev.max.bankingsystem.commands.impl.ShutdownCommand;
+import dev.max.vortex.commands.impl.ClearCommand;
+import dev.max.vortex.commands.impl.HelpCommand;
+import dev.max.vortex.commands.impl.ShutdownCommand;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -27,9 +28,19 @@ public class CommandManager {
     var name = arguments.remove(0);
 
     for(Command c : commands) {
-      if(c.name().equalsIgnoreCase(name)) {
-        c.execute(arguments.toArray(new String[0]));
+      if(!(c.aliases().isEmpty())) {
+        for(String alias : c.aliases()) {
+          if(c.name().equalsIgnoreCase(name) || name.equalsIgnoreCase(alias)) {
+            c.execute(arguments.toArray(new String[0]));
+          }
+        }
+      } else {
+        if(c.name().equalsIgnoreCase(name)) {
+          c.execute(arguments.toArray(new String[0]));
+        }
       }
+
+
     }
   }
 

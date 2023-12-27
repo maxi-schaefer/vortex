@@ -1,4 +1,4 @@
-package dev.max.bankingsystem.terminal;
+package dev.max.vortex.terminal;
 
 import org.fusesource.jansi.Ansi;
 

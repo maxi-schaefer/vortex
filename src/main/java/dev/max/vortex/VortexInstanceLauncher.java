@@ -1,13 +1,13 @@
-package dev.max.bankingsystem;
+package dev.max.vortex;
 
 /**
  * @author gokimax at 12/20/2023
  * @project BankingSystem
  */
-public class TemplateInstanceLauncher {
+public class VortexInstanceLauncher {
 
     public static void main(String[] args) {
-        new TemplateInstance();
+        new VortexInstance();
     }
 
 }

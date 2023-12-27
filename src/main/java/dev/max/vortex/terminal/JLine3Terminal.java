@@ -1,6 +1,6 @@
-package dev.max.bankingsystem.terminal;
+package dev.max.vortex.terminal;
 
-import dev.max.bankingsystem.TemplateInstance;
+import dev.max.vortex.VortexInstance;
 import lombok.Getter;
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
@@ -36,7 +36,7 @@ public class JLine3Terminal {
 
             this.lineReader = LineReaderBuilder.builder()
                     .terminal(terminal)
-                    .appName(TemplateInstance.getName())
+                    .appName(VortexInstance.getName())
                     .option(LineReader.Option.DISABLE_EVENT_EXPANSION, true)
                     .build();
 
