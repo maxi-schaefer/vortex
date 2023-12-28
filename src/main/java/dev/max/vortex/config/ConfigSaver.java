@@ -2,6 +2,7 @@ package dev.max.vortex.config;
 
 import com.google.gson.Gson;
 import dev.max.vortex.VortexInstance;
+import dev.max.vortex.config.impl.MySQLConfig;
 import dev.max.vortex.config.impl.TerminalConfig;
 import dev.max.vortex.utils.OSUtil;
 
@@ -24,8 +25,8 @@ public class ConfigSaver {
 
     Configs configs = new Configs();
 
-    TerminalConfig terminalConfig = VortexInstance.getInstance().getTerminalConfig();
-    configs.setTerminalConfig(terminalConfig);
+    configs.setTerminalConfig(VortexInstance.getInstance().getTerminalConfig());
+    configs.setMySQLConfig(VortexInstance.getInstance().getMySQLConfig());
 
     String json = new Gson().toJson(configs);
     writer.write(json);

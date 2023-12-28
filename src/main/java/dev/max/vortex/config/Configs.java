@@ -1,7 +1,6 @@
 package dev.max.vortex.config;
 
-import dev.max.vortex.config.impl.TerminalConfig;
-import lombok.AllArgsConstructor;
+import dev.max.vortex.config.impl.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,5 +13,6 @@ import lombok.Setter;
 public class Configs {
 
   private TerminalConfig terminalConfig;
+  private MySQLConfig mySQLConfig;
 
 }

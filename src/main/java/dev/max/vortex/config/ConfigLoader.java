@@ -2,7 +2,7 @@ package dev.max.vortex.config;
 
 import com.google.gson.Gson;
 import dev.max.vortex.VortexInstance;
-import dev.max.vortex.config.impl.TerminalConfig;
+import dev.max.vortex.config.impl.*;
 import dev.max.vortex.utils.OSUtil;
 
 import java.io.FileNotFoundException;
@@ -21,6 +21,13 @@ public class ConfigLoader {
 
     TerminalConfig terminalConfig = VortexInstance.getInstance().getTerminalConfig();
     terminalConfig.setPrompt(config.getTerminalConfig().getPrompt());
+
+    MySQLConfig mySQLConfig = VortexInstance.getInstance().getMySQLConfig();
+    mySQLConfig.setHost(config.getMySQLConfig().getHost());
+    mySQLConfig.setPort(config.getMySQLConfig().getPort());
+    mySQLConfig.setDatabase(config.getMySQLConfig().getDatabase());
+    mySQLConfig.setUser(config.getMySQLConfig().getUser());
+    mySQLConfig.setPassword(config.getMySQLConfig().getPassword());
 
 
   }
