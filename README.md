@@ -7,9 +7,11 @@ Vortex is a in java written template for complex java applications with mysql su
 # Installing Vortex
 
 Make sure you've installed following things:
-- Java Development Kit 20 [Installation Guide](https://docs.oracle.com/en/java/javase/20/install/)
-- Maven [Installation Guide](https://maven.apache.org/install.html)
+> Java Development Kit 20 [Installation Guide](https://docs.oracle.com/en/java/javase/20/install/)
+> 
+> Maven [Installation Guide](https://maven.apache.org/install.html)
 
+<br/>
 <details>
   <summary>Initialize IntelliJ Project</summary>
 
@@ -28,7 +30,7 @@ Make sure you've installed following things:
 # Start using Vortex
 ## Commands
 
-  You can create commands in dev.max.vortex.commands.impl, just create your command class and implement Command.java.
+  You can create commands in **dev.max.vortex.commands.impl**, just create your command class and implement *Command.java*.
   Implement the methods and change the return values.
   Example:
   ```java
@@ -49,7 +51,7 @@ Make sure you've installed following things:
     }
   }
   ```
-  Register your command in the CommandManager with:
+  Register your command in the *CommandManager* with:
   ```java
   commands.add(new YourCommand());
   ```
@@ -64,7 +66,7 @@ If you want your command to have aliases use the aliases method like this:
 
 ## Configs
 
-Create your config class in dev.max.vortex.config.impl, add all your variables, getter, setter and a constructor
+Create your config class in **dev.max.vortex.config.impl**, add all your variables, getter, setter and a constructor
 Example:
 ```java
 @Getter
@@ -80,7 +82,7 @@ public class TestConfig {
 
 }
 ```
-Now add your new Config to the Configs class in dev.max.vortex.config like this:
+Now add your new Config to the *Configs* class in **dev.max.vortex.config** like this:
 ```java
 @Setter
 @Getter
@@ -91,7 +93,7 @@ public class Configs {
 }
 ```
 
-After this you need to initialize it VortexInstance you can do it like this:
+After this you need to initialize it *VortexInstance* you can do it like this:
 ```java
 public class VortexInstance {
   private final TestConfig testConfig;
@@ -104,7 +106,7 @@ public class VortexInstance {
 }
 ```
 
-In the ConfigSaver and ConfigLoader class you need to add following code:
+In the *ConfigSaver* and *ConfigLoader* class you need to add following code:
 ### ConfigSaver | saveConfig()
 ```java
   config.setTestConfig(VortexInstance.getInstance().getTestConfig();
@@ -119,4 +121,4 @@ In the ConfigSaver and ConfigLoader class you need to add following code:
   testConfig.setTestFloat(config.getTestConfig().getTestFloat());
   testConfig.setTestBoolean(config.getTestConfig().getTestBoolean());
 ```
-Now you added your first config!
+Now you've added your first config!
