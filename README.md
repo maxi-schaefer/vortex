@@ -11,7 +11,7 @@ Make sure you've installed following things:
 - Maven [Installation Guide](https://maven.apache.org/install.html)
 
 <details>
-  <summary>IntelliJ Install</summary>
+  <summary>Initialize IntelliJ Project</summary>
 
   1. Start cloning this repository
      
@@ -22,12 +22,12 @@ Make sure you've installed following things:
   2. Open your Project in Intellij
      File > Open > "Path to Vortex"
 
-  3. Start coding your application!
+  3. And your done!
 </details>
 
 # Start using Vortex
 ## Commands
----
+
   You can create commands in dev.max.vortex.commands.impl, just create your command class and implement Command.java.
   Implement the methods and change the return values.
   Example:
@@ -63,7 +63,6 @@ If you want your command to have aliases use the aliases method like this:
 ```
 
 ## Configs
----
 
 Create your config class in dev.max.vortex.config.impl, add all your variables, getter, setter and a constructor
 Example:
