@@ -28,7 +28,7 @@ public class MySQLConnection {
     public boolean isConnected() {
         try {
             return this.connection.isValid(1);
-        } catch (SQLException e) {
+        } catch (SQLException | NullPointerException e) {
             return false;
         }
     }

@@ -1,6 +1,7 @@
 package dev.max.vortex.config;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import dev.max.vortex.VortexInstance;
 import dev.max.vortex.config.impl.MySQLConfig;
 import dev.max.vortex.config.impl.TerminalConfig;
@@ -28,7 +29,9 @@ public class ConfigSaver {
     configs.setTerminalConfig(VortexInstance.getInstance().getTerminalConfig());
     configs.setMySQLConfig(VortexInstance.getInstance().getMySQLConfig());
 
-    String json = new Gson().toJson(configs);
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    String json = gson.toJson(configs);
     writer.write(json);
     writer.close();
   }
